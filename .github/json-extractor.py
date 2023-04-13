@@ -161,7 +161,7 @@ def get_problems_with_retry(api, retries=3, delay=5):
     return result
 
 if __name__ == "__main__":
-    FILENAME = "contests.json"
+    FILENAME = ".github/contests.json"
 
     # get all contests
     contests = get_all_contests()
@@ -188,9 +188,9 @@ if __name__ == "__main__":
         # print("Contents of the current working directory:", os.listdir()) # for testing purposes
     
     # select unprocessed contests
-    # contests = [contest for contest in contests if contest['id'] not in processed_ids]
-    target_contest_id = 988  # Set the target contestId for testing purposes [1308, 988]
-    contests = filter_contest_by_id(contests, target_contest_id) # for testing purposes
+    contests = [contest for contest in contests if contest['id'] not in processed_ids]
+    # target_contest_id = 988  # Set the target contestId for testing purposes [1308, 988]
+    # contests = filter_contest_by_id(contests, target_contest_id) # for testing purposes
 
     # filter blacklisted contests out, if TRY_BLACKLISTED env variable is not set
     if not os.environ.get('TRY_BLACKLISTED'):
