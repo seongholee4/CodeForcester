@@ -8,9 +8,19 @@ on:
 jobs:
   scrape_contests:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+        node-version: ${{ matrix.node-version }}
 
       - name: Set up Python
         uses: actions/setup-python@v2
