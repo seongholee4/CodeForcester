@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r .github/requirements.txt
 
       - name: Run script
-        run: python json-extractor.py
+        run: python .github/json-extractor.py
