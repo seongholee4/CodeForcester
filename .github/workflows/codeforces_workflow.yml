@@ -37,13 +37,14 @@ jobs:
       - name: Run script
         run: python3 .github/json-extractor.py
 
-      - name: List files in current directory
-        run: ls -la
 
       - name: Commit and push contests.json
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           git config user.name "SeonghoLee"
           git config user.email "SeonghoLee4@gmail.com"
           git add .github/contests.json
+          git remote set-url origin "https://seongholee4:${{ env.ACCESS_TOKEN }}@github.com/seongholee4/CodeForcester.git"
           git commit -m "new contests.json added"
           git push

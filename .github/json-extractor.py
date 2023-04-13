@@ -65,7 +65,7 @@ def strip_x(x: str):
 
 def get_problems(contest):
     idx = contest['id']
-    print(f"\033[47;43mFetching problems for contest {idx}\033[0m") # yellow color for testing purposes
+    print(f"\033[33mFetching problems for contest {idx}\033[0m") # yellow color for testing purposes
     url = f'https://codeforces.com/contest/{idx}'
     
     headers = {
