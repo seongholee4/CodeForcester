@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - master
-
+  # Runs cron job
+  schedule:
+    - cron: '00 */8 * * *'
 jobs:
   scrape_contests:
     runs-on: ubuntu-latest
@@ -40,3 +42,4 @@ jobs:
             git add contests.json
             git commit -m "new contests.json added"
             git push
+          fi
