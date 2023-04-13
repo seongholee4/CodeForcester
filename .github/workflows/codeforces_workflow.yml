@@ -33,4 +33,10 @@ jobs:
           pip install -r .github/requirements.txt
 
       - name: Run script
-        run: python .github/json-extractor.py
+        run: |
+          if python3 .github/json-extractor.py; then
+            git config user.name "SeonghoLee"
+            git config user.email "SeonghoLee4@gmail.com"
+            git add contests.json
+            git commit -m "new contests.json added"
+            git push
