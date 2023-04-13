@@ -189,6 +189,7 @@ if __name__ == "__main__":
     
     # select unprocessed contests
     contests = [contest for contest in contests if contest['id'] not in processed_ids]
+    contests = contests[:30]
     # target_contest_id = 988  # Set the target contestId for testing purposes [1308, 988]
     # contests = filter_contest_by_id(contests, target_contest_id) # for testing purposes
 
