@@ -8,7 +8,6 @@ function ContestRowWithData({ contest, userSubmissions }) {
       contest={contest}
       problems={contest.problems || []}
       userSubmissions={userSubmissions}
-      isLoading={!contest.problems}
     />
   );
 }

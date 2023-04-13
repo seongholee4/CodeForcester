@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ContestRow({ contest, problems, userSubmissions, isLoading }) {
+function ContestRow({ contest, problems, userSubmissions }) {
 
   const getProblemStatus = (userSubmissions, problem) => {
     const submission = userSubmissions.find(
@@ -22,17 +22,18 @@ function ContestRow({ contest, problems, userSubmissions, isLoading }) {
     <tr>
       <td>{contest.name}</td>
       <td>
-        {isLoading ? (
-          <span>Loading problems...</span>
-        ) : (
-          <ul>
-            {problems.map((problem) => (
-              <li key={problem.index}>
-                {problem.index}
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul>
+          {problems.map((problem) => (
+            <li
+              key={problem.index}
+              style={{
+                backgroundcolor: getProblemStatus(userSubmissions, problem) === 'solved' ? 'green' : 'black'
+              }}
+            >
+              {problem.index} {problem.name} {problem.solvedCount}
+            </li>
+          ))}
+        </ul>
       </td>
     </tr>
   );

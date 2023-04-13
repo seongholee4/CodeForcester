@@ -2,17 +2,15 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import UserInput from './components/UserInput';
 import ContestList from './components/ContestList';
-
+import Header from './components/Header'
 
 function App() {
   const [userSubmissions, setUserSubmissions] = useState([]);
 
-
   return (
     <div className="app">
-      <h1>Codeforces Tracker</h1>
       <div className="app__body">
-        <UserInput setUserSubmissions={setUserSubmissions} />
+        <Header setUserSubmissions={setUserSubmissions}/>
         <div className="app__bodyLeft">
           <h2>Left</h2>
         </div>

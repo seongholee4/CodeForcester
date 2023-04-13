@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import ContestRowWithData from './ContestRowWithData';
 
 function ContestList({ userSubmissions }) {
@@ -30,7 +29,7 @@ function ContestList({ userSubmissions }) {
         <tbody>
           {contests.map((contest) => (
             <ContestRowWithData
-              key={contest}
+              key={contest.contestId}
               contest={contest}
               userSubmissions={userSubmissions}
             />
