@@ -65,7 +65,7 @@ def strip_x(x: str):
 
 def get_problems(contest):
     idx = contest['id']
-    print(f"\033[32mFetching problems for contest {idx}\033[0m") # green color for testing purposes
+    print(f"\033[47;43mFetching problems for contest {idx}\033[0m") # yellow color for testing purposes
     url = f'https://codeforces.com/contest/{idx}'
     
     headers = {
@@ -161,7 +161,10 @@ def get_problems_with_retry(api, retries=3, delay=5):
     return result
 
 if __name__ == "__main__":
-    FILENAME = ".github/contests.json"
+    repo_root = os.path.dirname(os.path.abspath(__file__))
+    contests_file_path = os.path.join(repo_root, 'contests.json')
+    FILENAME = contests_file_path
+    # FILENAME = ".github/contests.json"
 
     # get all contests
     contests = get_all_contests()
@@ -189,7 +192,7 @@ if __name__ == "__main__":
     
     # select unprocessed contests
     contests = [contest for contest in contests if contest['id'] not in processed_ids]
-    contests = contests[:30]
+    contests = contests[:10]
     # target_contest_id = 988  # Set the target contestId for testing purposes [1308, 988]
     # contests = filter_contest_by_id(contests, target_contest_id) # for testing purposes
 
