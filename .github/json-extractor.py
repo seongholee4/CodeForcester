@@ -161,7 +161,7 @@ def get_problems_with_retry(api, retries=3, delay=5):
     return result
 
 if __name__ == "__main__":
-    FILENAME = "public\contests.json"
+    FILENAME = "contests.json"
 
     # get all contests
     contests = get_all_contests()
