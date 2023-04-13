@@ -42,9 +42,9 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          git config user.name "SeonghoLee"
-          git config user.email "SeonghoLee4@gmail.com"
+          git config --global user.name "SeonghoLee4"
+          git config --global user.email "SeonghoLee4@gmail.com"
           git add .github/contests.json
           git remote set-url origin "https://seongholee4:${{ env.ACCESS_TOKEN }}@github.com/seongholee4/CodeForcester.git"
           git commit -m "new contests.json added"
-          git push
+          git push origin main
