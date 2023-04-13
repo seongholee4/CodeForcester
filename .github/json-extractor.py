@@ -161,10 +161,10 @@ def get_problems_with_retry(api, retries=3, delay=5):
     return result
 
 if __name__ == "__main__":
-    repo_root = os.path.dirname(os.path.abspath(__file__))
-    contests_file_path = os.path.join(repo_root, 'contests.json')
-    FILENAME = contests_file_path
-    # FILENAME = ".github/contests.json"
+    # repo_root = os.path.dirname(os.path.abspath(__file__))
+    # contests_file_path = os.path.join(repo_root, 'contests.json')
+    # FILENAME = contests_file_path
+    FILENAME = ".github/contests.json"
 
     # get all contests
     contests = get_all_contests()
